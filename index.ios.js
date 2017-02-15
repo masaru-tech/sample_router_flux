@@ -111,11 +111,10 @@ class App extends Component {
       <Router createReducer={reducerCreate} sceneStyle={{backgroundColor:'#F7F7F7'}}>
         <Scene key="modal" component={Modal} >
           <Scene key="root">
-            <Scene key="tabbar" tabs={true} >
+            <Scene key="tabbar" tabs={true} tabBarStyle={{ backgroundColor: '#FFFFFF' }}>
                 <Scene key="tab1" title="Tab #1" icon={TabIcon} navigationBarStyle={{backgroundColor:'red'}} titleStyle={{color:'white'}}>
                   <Scene key="pageOne" component={Page1} title="Tab #1_1" onRight={()=>alert("Right button")} rightTitle="Right" />
                   <Scene key="pageTwo" component={Page2} title="Tab #1_2" titleStyle={{color:'black'}}/>
-                  <Scene key="pageThree" direction="vertical" hideTabBar={true} hideNavBar={true} component={Page3} schema="modal" title="Login"/>
                 </Scene>
                 <Scene key="tab2" initial={true} title="Tab #2" icon={TabIcon}>
                     <Scene key="tab2_1" component={Page4} title="Tab #2_1" onLeft={()=>alert("Left button!")} leftTitle="Left"/>
@@ -123,6 +122,7 @@ class App extends Component {
                 </Scene>
                 <Scene key="tab3" component={Page6} title="Tab #3" icon={TabIcon} />
             </Scene>
+            <Scene key="pageThree" direction="vertical" hideTabBar={true} hideNavBar={true} component={Page3} schema="modal" title="Login"/>
           </Scene>
         </Scene>
       </Router>
